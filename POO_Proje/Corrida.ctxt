@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Corrida()
+comment1.params=participantes\ pista\ classificacao
+comment1.target=Corrida(java.util.List,\ Circuito,\ java.util.Map)
+comment2.params=corr
+comment2.target=Corrida(Corrida)
+comment3.params=
+comment3.target=Circuito\ getPista()
+comment4.params=
+comment4.target=java.util.Map\ getClassi()
+comment5.params=o
+comment5.target=boolean\ equals(java.lang.Object)
+comment6.params=
+comment6.target=void\ novaCorrida()
+numComments=7

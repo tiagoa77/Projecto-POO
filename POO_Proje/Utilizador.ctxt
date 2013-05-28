@@ -1,18 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Utilizador()
-<<<<<<< HEAD
 comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Utilizadores\n
-comment1.params=nome_ut\ morada_ut\ open\ bet_historico\ corr_count
-comment1.target=Utilizador(java.lang.String,\ java.lang.String,\ java.util.ArrayList,\ java.util.ArrayList,\ int)
-comment10.params=ap
-comment10.target=void\ setOpenBets(java.util.List)
-comment11.params=ap
-comment11.target=void\ setBetsHist(Aposta)
-comment12.params=cc
-comment12.target=void\ setCC(int)
-=======
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Utilizadores\r\n
 comment1.params=nome_ut\ morada_ut\ pass\ open\ bet_historico\ corr_count
 comment1.target=Utilizador(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.ArrayList,\ java.util.ArrayList,\ int)
 comment10.params=morada_ut
@@ -21,7 +10,6 @@ comment11.params=pass
 comment11.target=void\ setPass(java.lang.String)
 comment12.params=ap
 comment12.target=void\ setOpenBets(java.util.List)
->>>>>>> 955be73079b51620b151e24e60acef51ce65e407
 comment13.params=ap
 comment13.target=void\ setBetsHist(Aposta)
 comment14.params=cc

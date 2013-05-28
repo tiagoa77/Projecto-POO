@@ -1,2 +1,16 @@
 #BlueJ class context
-numComments=0
+comment0.params=
+comment0.target=Equipa()
+comment1.params=pil1\ pil2\ nome_eq
+comment1.target=Equipa(Piloto,\ Piloto,\ java.lang.String)
+comment2.params=equipa
+comment2.target=Equipa(Equipa)
+comment3.params=
+comment3.target=Piloto\ getPil1()
+comment4.params=
+comment4.target=Piloto\ getPil2()
+comment5.params=
+comment5.target=java.lang.String\ getNome()
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

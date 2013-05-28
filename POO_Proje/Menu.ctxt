@@ -9,5 +9,5 @@ comment3.params=fichName
 comment3.target=java.util.List\ carregaPilotos(java.lang.String)
 comment4.params=
 comment4.target=java.util.List\ main()
-comment4.text=public\ static\ List<Carro>\ carregaCarros(){\r\n\ \ \ \ \r\n\ \ \ \ \r\n\ \ \ \ \r\n\ \ \ \ }\r\n\ \ \ \r\n\ \ \ public\ static\ List<Circuito>\ carregaCircuito(){\r\n}
+comment4.text=public\ static\ List<Carro>\ carregaCarros(){\n\ \ \ \ \n\ \ \ \ \n\ \ \ \ \n\ \ \ \ }\n\ \ \ \n\ \ \ public\ static\ List<Circuito>\ carregaCircuito(){\n}
 numComments=5

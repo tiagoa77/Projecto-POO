@@ -46,8 +46,15 @@ public class Menu implements Serializable
                  String nome;
                  System.out.println("Insira o seu nome!");
                  nome = sc.next();
-                 //for()
-                 Menu.MenuUtilizador(nome);
+                 Set<String> nomes = new TreeSet<String>();
+                 for(Utilizador uti : todosUtilizadores){
+                    nomes.add(uti.getNome());
+                 }
+                 if(nomes.contains(nome)){
+                    Menu.MenuUtilizador(nome);
+                    }else{
+                        System.out.println("Utilizador nao existe!");
+                    }
                 }
              if(opcao==3){opcao=0;}
             

@@ -152,7 +152,8 @@ public class Menu implements Serializable
         try{
             ObjectOutputStream oout = new ObjectOutputStream(new FileOutputStream("RancingMan.dat"));
             oout.writeObject(this);
-            oout.flush(); oout.close();
+            oout.flush(); 
+            oout.close();
         }
         catch(IOException e) { System.out.println(e.getMessage()); }
     }
@@ -171,6 +172,7 @@ public class Menu implements Serializable
     
    public static List<Piloto> main() {  
       List<Piloto> nda = Menu.carregaPilotos("pilotos.txt");
+      //Menu.gravaObj();
       Menu.Opcoes();
       return nda;
       

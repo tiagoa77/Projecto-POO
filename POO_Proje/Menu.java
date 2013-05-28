@@ -54,18 +54,37 @@ public class Menu
        return linhas;
     }
    
-   public static List<Piloto> carregaPilotos(){
-    }
+   public static List<Piloto> carregaPilotos(String fichName){
+       String[] aux;
+       Piloto nPil;
+       List <String> linhas = Menu.leLinhasScanner(fichName);
+       List <Piloto> pilotos  = new ArrayList<Piloto>();
+       for(String pil : linhas){
+           aux = pil.split(";");
+           nPil = new Piloto();
+           nPil.setNome(aux[0]);
+           nPil.setNac(aux[1]);
+           nPil.setPalmar(Integer.parseInt(aux[2]));
+           nPil.setQualidade(Integer.parseInt(aux[3]));
+           nPil.setCapWet(Integer.parseInt(aux[4]));
+           pilotos.add(nPil);
+        }
+       return pilotos;
+    } 
     
-   public static List<Piloto> carregaCarros(){
+    
+    
+   /*public static List<Piloto> carregaCarros(){
     }
    
    public static List<Piloto> carregaCircuito(){
-    }
+    }*/
     
     
-   public static void main() {  
+   public static List<Piloto> main() {  
+      List <Piloto> anda = Menu.carregaPilotos("pilotos.txt");
       
+      return anda;
        
    }
 }

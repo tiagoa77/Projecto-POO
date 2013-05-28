@@ -86,7 +86,7 @@ public class Utilizador implements Serializable
     public void addBetsHist(Aposta ap){ bet_hist.add(ap); }
 
 
-    public void novoUtilizador(String nome,String morada,String pass){
+    public void novoUtilizador(String nome,String morada){
         this.setNome(nome);
         this.setMorada(morada);
         this.setPass(pass);

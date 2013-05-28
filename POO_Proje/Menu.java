@@ -27,7 +27,7 @@ public class Menu implements Serializable
              System.out.println("-----------------------------]Menu[---------------------------------------");
              System.out.println("-- 1 -> Registar!                                                   (1) --");
              System.out.println("-- 2 -> Login!                                                      (2) --");
-             System.out.println("-- 3 -> Sair!                                                        (3) --");
+             System.out.println("-- 3 -> Sair!                                                       (3) --");
              System.out.println("--------------------------------------------------------------------------");
         
              opcao = sc.nextInt();
@@ -51,22 +51,34 @@ public class Menu implements Serializable
                     nomes.add(uti.getNome());
                  }
                  if(nomes.contains(nome)){
+                    int op = -1;
+                    System.out.println("------------------------------Wellcome "+ nome +" ----------------------------");
+                    System.out.println("-- 1 -> novo jogo?                                                      (1) --");
+                    System.out.println("-- 2 -> continuar?                                                      (2) --");
+                    op=sc.nextInt();
+                    if(op==1){
                     Menu.MenuUtilizador(nome);
-                    }else{
-                        System.out.println("Utilizador nao existe!");
+                    }
+                    if(op==2){
+                    //carregar dados
+                    Menu.MenuUtilizador(nome);
+                    }
+                 }else{
+                       System.out.println("Utilizador nao existe!");
                     }
                 }
              if(opcao==3){opcao=0;}
             
-         }
+            }
         }
-   
+    
+    
    private static void MenuUtilizador(String nome){
        Scanner sc = new Scanner(System.in).useDelimiter("\n");
        int opcao=-1;
          
        while (opcao!=0){
-           System.out.println("--------------------------]Welcome "+ nome +"[------------------------------");
+           System.out.println("--------------------------]Welcome "+ nome +"[----------------------------");
            System.out.println("-- 1 -> Apostar                                                     (1) --");
            System.out.println("-- 2 -> Apostas em vigor                                            (2) --");
            System.out.println("-- 3 -> Historico de apostas                                        (3) --");
@@ -74,7 +86,8 @@ public class Menu implements Serializable
            System.out.println("-- 5 -> Classificação da corrida                                    (5) --");
            System.out.println("-- 6 -> Classificação do Campeonato                                 (6) --");
            System.out.println("-- 7 -> Simular corrida                                             (7) --");
-           System.out.println("-- 8 -> Sair                                                        (8) --");
+           System.out.println("-- 8 -> Editar                                                      (8) --");
+           System.out.println("-- 9 -> Sair                                                        (9) --");
            System.out.println("--------------------------------------------------------------------------");
         
            opcao = sc.nextInt();
@@ -85,7 +98,8 @@ public class Menu implements Serializable
            if(opcao==5){}
            if(opcao==6){}
            if(opcao==7){}
-           if(opcao==8){opcao=0;}
+           if(opcao==8){}
+           if(opcao==9){opcao=0;}
             }
     }  
         
@@ -129,15 +143,31 @@ public class Menu implements Serializable
     
     
     
-   /*public static List<Carro> carregaCarros(){
-    
-    
-    
-    }
+   //public static List<Carro> carregaCarros(){}
    
-   public static List<Circuito> carregaCircuito(){
-    }*/
+   //public static List<Circuito> carregaCircuito(){}
     
+   //ObjectStream
+   public void gravaObj() {
+        try{
+            ObjectOutputStream oout = new ObjectOutputStream(new FileOutputStream("RancingMan.dat"));
+            oout.writeObject(this);
+            oout.flush(); oout.close();
+        }
+        catch(IOException e) { System.out.println(e.getMessage()); }
+    }
+
+   public void carregaObj() {
+        try {
+            ObjectInputStream oin = new ObjectInputStream(new FileInputStream("RancingMan.dat"));
+            Menu res = (Menu) oin.readObject();
+            oin.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     
    public static List<Piloto> main() {  
       List<Piloto> nda = Menu.carregaPilotos("pilotos.txt");

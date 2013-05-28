@@ -1,11 +1,12 @@
 import java.util.*;
+import java.io.Serializable;
 /**
  * Write a description of class Utilizadores here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Utilizador
+public class Utilizador implements Serializable
 {
     // instance variables - replace the example below with your own
     private String nome;
@@ -77,4 +78,18 @@ public class Utilizador
     
     public void addOpenBets(Aposta ap){ open_bet.add(ap); }
     public void addBetsHist(Aposta ap){ bet_hist.add(ap); }
+
+
+    public void novoUtilizador(String nome,String morada){
+        this.setNome(nome);
+        this.setMorada(morada);
+        this.conta_corr = 0;
+        this.open_bet = new ArrayList<Aposta>(); 
+        this.bet_hist=new ArrayList<Aposta>();
+        }
+
+
+
+
+
 }

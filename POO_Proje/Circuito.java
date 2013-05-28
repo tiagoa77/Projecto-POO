@@ -1,21 +1,21 @@
 import java.util.*;
 import java.lang.*;
-
+import java.io.Serializable;
 /**
  * Write a description of class Circuito here.
  * 
  * @author (Grupo X) 
  * @version (a version number or a date)
  */
-public class Circuito
+public class Circuito implements Serializable
 {
     // instance variables - replace the example below with your own
     private int dist;
+    private int numero_voltas;
     private String nome;
-    private float tempo_med;
+    private List<Float> tempo_med;
     private float desv_tempo_med;
     private float troca_pil;
-    
     private float tempo_rec;
     private Carro carro_rec;
     private Piloto piloto_rec;
@@ -28,8 +28,9 @@ public class Circuito
     {
         // initialise instance variables
         this.dist= 0;
+        this.numero_voltas = 0;
         this.nome="";
-        this.tempo_med=0.00f;
+        this.tempo_med=new ArrayList<Float>();
         this.desv_tempo_med=0.00f;
         this.troca_pil=0.00f;
         
@@ -39,10 +40,11 @@ public class Circuito
         
     }
     
-    public Circuito(int distancia, String nome_c, float tempmed, float desvio, 
+    public Circuito(int distancia,int num, String nome_c, List<Float> tempmed, float desvio, 
     float troca, float temprec, Carro car, Piloto pil)
     {
         this.dist= distancia;
+        this.numero_voltas = num;
         this.nome=nome_c;
         this.tempo_med=tempmed;
         this.desv_tempo_med=desvio;
@@ -55,6 +57,7 @@ public class Circuito
     public Circuito(Circuito circ)
     {
         this.dist= circ.getDist();
+        this.numero_voltas = circ.getNumVol();
         this.nome=circ.getNome();
         this.tempo_med=circ.getTempoMed();
         this.desv_tempo_med=circ.getDesvTempMed();
@@ -71,9 +74,11 @@ public class Circuito
     /**Devolve Distancia**/
     public int getDist(){ return this.dist; }
     /**Devolve Nome**/
+    public int getNumVol(){return this.numero_voltas;}
+    
     public String getNome(){ return this.nome; }
     /**Devolve Tempo MŽdio**/
-    public float getTempoMed(){ return this.tempo_med; }
+    public List<Float> getTempoMed(){ return this.tempo_med; }
     /**Devolve Desvio de Tempo MŽdio**/
     public float getDesvTempMed(){return this.desv_tempo_med;}
     /**Devolve Troca de Piloto**/
@@ -91,7 +96,7 @@ public class Circuito
     
     public void setDist(int new_dist){ dist=new_dist; }
     public void setNome(String new_nome){ nome=new_nome; }
-    public void setTempoMed(float new_tempo_med){ tempo_med=new_tempo_med; }
+    public void setTempoMed(List<Float> new_tempo_med){ tempo_med=new_tempo_med; }
     public void setDesvTempMed(float new_desvio){ desv_tempo_med=new_desvio; }
     public void setTrocaPil(float new_troca_pil){ troca_pil=new_troca_pil; }
     public void setTempoRec(float new_tempo_rec){ tempo_rec=new_tempo_rec; }

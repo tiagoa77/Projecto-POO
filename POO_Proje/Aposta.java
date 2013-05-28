@@ -1,11 +1,11 @@
-
+import java.io.Serializable;
 /**
  * Write a description of class Aposta here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Aposta
+public class Aposta implements Serializable
 {
     private float valor;
     

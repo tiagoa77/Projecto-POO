@@ -1,0 +1,1 @@
+dist;numero_voltas;nome;tempo_med;desv_tempo_med;troca_pil;tempo_rec;carro_rec;piloto_rec;

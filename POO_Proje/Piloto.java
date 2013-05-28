@@ -1,11 +1,11 @@
-
+import java.io.Serializable;
 /**
  * Write a description of class Piloto here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Piloto
+public class Piloto implements Serializable
 {
     // instance variables - replace the example below with your own
     private String nome;
@@ -20,11 +20,11 @@ public class Piloto
     public Piloto()
     {
         // initialise instance variables
-        nome="";
-        nac="";
-        palmar=0;
-        qualidade=0;
-        cap_wet=0;
+        this.nome="";
+        this.nac="";
+        this.palmar=0;
+        this.qualidade=0;
+        this.cap_wet=0;
     }
     
     public Piloto(String nome_p, String nacionalidade, int palmares, int qualid, int capacidade_wet)
@@ -38,11 +38,11 @@ public class Piloto
     
     public Piloto(Piloto pil)
     {
-        nome=pil.getNome();
-        nac=pil.getNac();
-        palmar=pil.getPalmar();
-        qualidade=pil.getQualidade();
-        cap_wet=pil.getCapWet();
+        this.nome=pil.getNome();
+        this.nac=pil.getNac();
+        this.palmar=pil.getPalmar();
+        this.qualidade=pil.getQualidade();
+        this.cap_wet=pil.getCapWet();
         
     }
 

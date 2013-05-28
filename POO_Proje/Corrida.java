@@ -1,11 +1,12 @@
 import java.util.*;
+import java.io.Serializable;
 /**
  * Write a description of class Corrida here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Corrida
+public class Corrida implements Serializable
 {
    private Circuito pista;
    private Map<Carro,Integer> classificacao;

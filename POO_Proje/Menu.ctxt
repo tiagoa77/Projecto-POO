@@ -8,9 +8,15 @@ comment2.target=java.util.ArrayList\ leLinhasScanner(java.lang.String)
 comment3.params=fichName
 comment3.target=java.util.List\ carregaPilotos(java.lang.String)
 comment4.params=
+<<<<<<< HEAD
 comment4.target=void\ gravaObj()
 comment5.params=
 comment5.target=void\ carregaObj()
 comment6.params=
 comment6.target=java.util.List\ main()
 numComments=7
+=======
+comment4.target=java.util.List\ main()
+comment4.text=public\ static\ List<Carro>\ carregaCarros(){\n\ \ \ \ \n\ \ \ \ \n\ \ \ \ \n\ \ \ \ }\n\ \ \ \n\ \ \ public\ static\ List<Circuito>\ carregaCircuito(){\n}
+numComments=5
+>>>>>>> 56a0b4105b51566deaabdd2d689e8f8340df05fe

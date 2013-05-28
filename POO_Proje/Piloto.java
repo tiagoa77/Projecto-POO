@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.lang.*;
 /**
  * Write a description of class Piloto here.
  * 
@@ -45,14 +46,6 @@ public class Piloto implements Serializable
         this.cap_wet=pil.getCapWet();
         
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    
     /**
      * GET
        **/
@@ -76,12 +69,16 @@ public class Piloto implements Serializable
     public void setQualidade(int new_qual){ this.qualidade=new_qual; }
     public void setCapWet(int new_cap_wet){ this.cap_wet=new_cap_wet; }
     
-    
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return palmar + y;
+    public String toString(){
+        StringBuilder s= new StringBuilder();
+        s.append("Nome Piloto: " + this.nome + "\n");
+        s.append("Nacionalidade: "+ this.nac + "\n");
+        s.append("T’tulos: "+ this.palmar + "\n");
+        s.append("Qualidade: "+ this.qualidade + "\n");
+        s.append("Capacidade Piso Molhado: "+ this.cap_wet + "\n");
+        return s.toString();
     }
+    
     public Piloto clone(){
         return new Piloto(this);
     }

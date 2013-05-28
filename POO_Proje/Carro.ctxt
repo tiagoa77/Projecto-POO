@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Carro()
-comment0.text=\r\n\ Constructores\r\n
+comment0.text=\n\ Constructores\n
 comment1.params=marc\ mod\ cilindrada\ potencia\ condutores
 comment1.target=Carro(java.lang.String,\ java.lang.String,\ int,\ int,\ Equipa)
 comment10.params=cilindrada
@@ -16,7 +16,7 @@ comment2.params=carro
 comment2.target=Carro(Carro)
 comment3.params=
 comment3.target=java.lang.String\ getMarca()
-comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment3.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
 comment4.params=
 comment4.target=java.lang.String\ getModelo()
 comment5.params=

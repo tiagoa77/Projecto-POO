@@ -1,6 +1,7 @@
-import java.util.*;
+    import java.util.*;
 import java.lang.*;
 import java.io.Serializable;
+//import java.lang.Math;
 /**
  * Write a description of class Circuito here.
  * 
@@ -13,7 +14,7 @@ public class Circuito implements Serializable
     private int dist;
     private int numero_voltas;
     private String nome;
-    private List<Float> tempo_med;
+    private Map<String, Float> tempo_med;
     private float desv_tempo_med;
     private float troca_pil;
     private float tempo_rec;
@@ -30,36 +31,42 @@ public class Circuito implements Serializable
         this.dist= 0;
         this.numero_voltas = 0;
         this.nome="";
-        this.tempo_med=new ArrayList<Float>();
+        this.tempo_med=new HashMap<String,Float>();
         this.desv_tempo_med=0.00f;
         this.troca_pil=0.00f;
-        
         this.tempo_rec=0.00f;
         this.carro_rec=null;
         this.piloto_rec=new Piloto();
         
     }
     
-    public Circuito(int distancia,int num, String nome_c, List<Float> tempmed, float desvio, 
+    public Circuito(int distancia,int num, String nome_c, Map<String, Float> tempmed, float desvio, 
     float troca, float temprec, Carro car, Piloto pil)
     {
+        String tipo;
         this.dist= distancia;
         this.numero_voltas = num;
         this.nome=nome_c;
+        for( float temp: tempmed.values()){
+          //  this.tempo_med.put(tipo,tempmed.get(tipo));
+        }
         this.tempo_med=tempmed;
         this.desv_tempo_med=desvio;
         this.troca_pil=troca;
-        
         this.tempo_rec=temprec;
         this.carro_rec=car.clone();
         this.piloto_rec=pil.clone();
     }
+    
     public Circuito(Circuito circ)
     {
+        String tipo;
         this.dist= circ.getDist();
         this.numero_voltas = circ.getNumVol();
         this.nome=circ.getNome();
-        this.tempo_med=circ.getTempoMed();
+
+        
+        
         this.desv_tempo_med=circ.getDesvTempMed();
         this.troca_pil=circ.getTrocaPil();
         
@@ -71,23 +78,33 @@ public class Circuito implements Serializable
         /**
      * GET
        **/
-    /**Devolve Distancia**/
+    /** Devolve Distancia               **/
     public int getDist(){ return this.dist; }
-    /**Devolve Nome**/
+    /** Devolve Numero de Voltas        **/
     public int getNumVol(){return this.numero_voltas;}
-    
+    /** Devolve Nome                    **/
     public String getNome(){ return this.nome; }
-    /**Devolve Tempo M仕io**/
-    public List<Float> getTempoMed(){ return this.tempo_med; }
-    /**Devolve Desvio de Tempo M仕io**/
+    
+    /** Devolve Tempo M仕io             **/
+    public float getTempoMed(String key){
+        /** 
+        Map<String,Float> novo = new Map<String,Float>();
+        for (int i=0; this.tempo_med.size();i++){
+            novo.put(this.tempo_med
+        }   
+        */
+        return this.tempo_med.get(key);
+    }
+    
+    /** Devolve Desvio de Tempo M仕io   **/
     public float getDesvTempMed(){return this.desv_tempo_med;}
-    /**Devolve Troca de Piloto**/
+    /** Devolve Troca de Piloto         **/
     public float getTrocaPil(){ return this.troca_pil;}
-    /**Devolve Tempo Recorde**/
+    /** Devolve Tempo Recorde           **/
     public float getTempRec(){ return this.tempo_rec;}
-    /**Devolve Carro do Recorde**/
+    /** Devolve Carro do Recorde        **/
     public Carro getCarroRec(){ return this.carro_rec.clone();}
-    /**Devolve Piloto do Recorde**/
+    /** Devolve Piloto do Recorde       **/
     public Piloto getPilotoRec(){ return this.piloto_rec.clone();}
     
         /**
@@ -96,10 +113,46 @@ public class Circuito implements Serializable
     
     public void setDist(int new_dist){ dist=new_dist; }
     public void setNome(String new_nome){ nome=new_nome; }
+    
+    /**
     public void setTempoMed(List<Float> new_tempo_med){ tempo_med=new_tempo_med; }
+    */
+    
     public void setDesvTempMed(float new_desvio){ desv_tempo_med=new_desvio; }
     public void setTrocaPil(float new_troca_pil){ troca_pil=new_troca_pil; }
     public void setTempoRec(float new_tempo_rec){ tempo_rec=new_tempo_rec; }
     public void setCarroRec(Carro new_carro_rec){ carro_rec=new_carro_rec.clone(); }
-    public void setPilotoRec(Piloto new_piloto_rec){ piloto_rec=new_piloto_rec.clone(); }   
+    public void setPilotoRec(Piloto new_piloto_rec){ piloto_rec=new_piloto_rec.clone(); }
+    
+    public String toString(){
+        StringBuilder s = new StringBuilder();
+        s.append("Nome Circuito: "+ this.nome + "\n");
+        s.append("Distancia: "+ this.dist + "\n");
+        s.append("Numero de Voltas: "+ this.numero_voltas + "\n");
+        s.append("Tempos M仕ios: ");
+        for (int i=0; i<=this.tempo_med.size(); i++){
+            s.append("");
+        }
+        return s.toString();
+    }
+    
+    public boolean equals(Object obj){
+        if (obj==this) return true;
+        if (obj==null || obj.getClass() != obj.getClass()) return false;
+        Circuito c = (Circuito) obj;
+        return (
+        this.dist == c.getDist() && 
+        this.numero_voltas == c.getNumVol() &&
+        this.nome.equals(c.getNome()) &&
+        //this.tempo_med.equals(c.getTempoMed()) &&
+        this.desv_tempo_med == c.getDesvTempMed() &&
+        this.troca_pil == c.getTrocaPil() &&
+        this.tempo_rec == c.getTempRec() &&
+        this.carro_rec.equals(c.getCarroRec()) &&
+        this.piloto_rec.equals(c.getPilotoRec())
+        );
+    }
+    
+    
+    public Circuito clone() {return new Circuito(this);}
 }

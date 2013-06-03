@@ -8,6 +8,18 @@ import java.io.Serializable;
  */
 public class Campeonato implements Serializable
 {
- private List<Corrida> classificacao; 
- private Map<Carro, Integer> classificacao_geral;
+    private List<Corrida> classificacao; 
+    private Map<Carro, Integer> classificacao_geral;
+ 
+    public Campeonato(){
+        this.classificacao = new ArrayList<Corrida>();
+        this.classificacao_geral = new HashMap<Carro, Integer>();
+    }
+ 
+    public Campeonato( List<Corrida> classi, Map<Carro,Integer> classi_geral){
+        
+        
+    
+    }
+    
 }

@@ -12,7 +12,7 @@ public class Circuito implements Serializable
 {
     // instance variables - replace the example below with your own
     private int dist;
-    private int numero_voltas;
+    private int numeroVoltas;
     private String nome;
     private Map<String, Float> tempo_med;
     private float desv_tempo_med;
@@ -29,7 +29,7 @@ public class Circuito implements Serializable
     {
         // initialise instance variables
         this.dist= 0;
-        this.numero_voltas = 0;
+        this.numeroVoltas = 0;
         this.nome="";
         this.tempo_med=new HashMap<String,Float>();
         this.desv_tempo_med=0.00f;
@@ -45,7 +45,7 @@ public class Circuito implements Serializable
     {
         String tipo;
         this.dist= distancia;
-        this.numero_voltas = num;
+        this.numeroVoltas = num;
         this.nome=nome_c;
         for( float temp: tempmed.values()){
           //  this.tempo_med.put(tipo,tempmed.get(tipo));
@@ -62,7 +62,7 @@ public class Circuito implements Serializable
     {
         String tipo;
         this.dist= circ.getDist();
-        this.numero_voltas = circ.getNumVol();
+        this.numeroVoltas = circ.getNumVol();
         this.nome=circ.getNome();
 
         
@@ -81,7 +81,7 @@ public class Circuito implements Serializable
     /** Devolve Distancia               **/
     public int getDist(){ return this.dist; }
     /** Devolve Numero de Voltas        **/
-    public int getNumVol(){return this.numero_voltas;}
+    public int getNumVol(){return this.numeroVoltas;}
     /** Devolve Nome                    **/
     public String getNome(){ return this.nome; }
     
@@ -111,9 +111,9 @@ public class Circuito implements Serializable
      * SET
        **/
     
-    public void setDist(int new_dist){ dist=new_dist; }
-    public void setNome(String new_nome){ nome=new_nome; }
-    
+    public void setDist(int newDist){ dist=newDist; }
+    public void setNome(String newNome){ nome=newNome; }
+    public void setNumVol(int newNumVol){this.numeroVoltas = newNumVol;}
     /**
     public void setTempoMed(List<Float> new_tempo_med){ tempo_med=new_tempo_med; }
     */
@@ -128,7 +128,7 @@ public class Circuito implements Serializable
         StringBuilder s = new StringBuilder();
         s.append("Nome Circuito: "+ this.nome + "\n");
         s.append("Distancia: "+ this.dist + "\n");
-        s.append("Numero de Voltas: "+ this.numero_voltas + "\n");
+        s.append("Numero de Voltas: "+ this.numeroVoltas + "\n");
         s.append("Tempos MŽdios: ");
         for (int i=0; i<=this.tempo_med.size(); i++){
             s.append("");
@@ -142,7 +142,7 @@ public class Circuito implements Serializable
         Circuito c = (Circuito) obj;
         return (
         this.dist == c.getDist() && 
-        this.numero_voltas == c.getNumVol() &&
+        this.numeroVoltas == c.getNumVol() &&
         this.nome.equals(c.getNome()) &&
         //this.tempo_med.equals(c.getTempoMed()) &&
         this.desv_tempo_med == c.getDesvTempMed() &&

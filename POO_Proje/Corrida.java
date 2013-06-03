@@ -73,9 +73,9 @@ public class Corrida implements Serializable
         }else this.classificacao.put(car,tempo);
     }
     
-    public Carro melhorTempo(){
+   /* public Carro melhorTempo(){
         
-        List<Float> tempos = this.classificacao.values();
+        //List<Float> tempos = this.classificacao.values();
         float timeMax = tempos[0]; 
         for(int i = 1 ; i <tempos.size() ; i++){
             if (timeMax < tempos[i]){
@@ -85,5 +85,5 @@ public class Corrida implements Serializable
         }
         
         
-    }
+    }*/
 }

@@ -33,7 +33,15 @@ public class CarroPC2 extends Carro implements Serializable
     }
 
 
-
+    public float tempoProximaVolta(Circuito pista){
+        float desvio=0;
+        float tempoMedio = pista.getTempoMed().get(1);
+        
+        
+        
+        
+        return desvio;
+    }
 
 
 }

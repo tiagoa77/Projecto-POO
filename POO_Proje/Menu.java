@@ -46,11 +46,11 @@ public class Menu implements Serializable
                  String nome;
                  System.out.println("Insira o seu nome!");
                  nome = sc.next();
-                 Set<String> nomes = new TreeSet<String>();
+                 Set<String> nomesUtilizadores = new TreeSet<String>();
                  for(Utilizador uti : todosUtilizadores){
-                    nomes.add(uti.getNome());
+                    nomesUtilizadores.add(uti.getNome());
                  }
-                 if(nomes.contains(nome)){
+                 if(nomesUtilizadores.contains(nome)){
                     int op = -1;
                     System.out.println("------------------------------Wellcome "+ nome +" ----------------------------");
                     System.out.println("-- 1 -> novo jogo?                                                      (1) --");
@@ -127,7 +127,7 @@ public class Menu implements Serializable
        String[] aux;
        Piloto nPil;
        List <String> linhas = Menu.leLinhasScanner(fichName);
-       List<Piloto> pilotos= new ArrayList<Piloto>();
+       List<Piloto> p = new ArrayList<Piloto>();
        for(String pil : linhas){
            aux = pil.split(";");
            nPil = new Piloto();
@@ -136,9 +136,9 @@ public class Menu implements Serializable
            nPil.setPalmar(Integer.parseInt(aux[2]));
            nPil.setQualidade(Integer.parseInt(aux[3]));
            nPil.setCapWet(Integer.parseInt(aux[4]));
-           pilotos.add(nPil);
+           p.add(nPil);
         }
-       return pilotos;
+       return p;
     } 
     
     
@@ -148,12 +148,12 @@ public class Menu implements Serializable
    //public static List<Circuito> carregaCircuito(){}
     
    //ObjectStream
-   public void gravaObj() {
+   public static void gravaObj(List<Piloto> p) {
         try{
-            ObjectOutputStream oout = new ObjectOutputStream(new FileOutputStream("RancingMan.dat"));
-            oout.writeObject(this);
-            oout.flush(); 
-            oout.close();
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("RancingMan.dat"));
+            out.writeObject(p);
+            out.flush(); 
+            out.close();
         }
         catch(IOException e) { System.out.println(e.getMessage()); }
     }
@@ -170,11 +170,12 @@ public class Menu implements Serializable
         }
     }
     
-   public static List<Piloto> main() {  
-      List<Piloto> nda = Menu.carregaPilotos("pilotos.txt");
-      //Menu.gravaObj();
+   public static void main() {  
+
+      List<Piloto> p = Menu.carregaPilotos("pilotos.txt");
+      Menu.gravaObj(p);
       Menu.Opcoes();
-      return nda;
+      
       
        
    }

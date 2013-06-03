@@ -79,6 +79,15 @@ public class Piloto implements Serializable
         return s.toString();
     }
     
+    public boolean equals(Object o){
+        if (this==o) return true;
+        if (o==null || this.getClass() != o.getClass()) return false;
+        Piloto pil = (Piloto) o;
+        return (this.nome.equals(pil.getNome()) && this.nac.equals(pil.getNac()) &&
+        this.palmar==pil.getPalmar() && this.qualidade==pil.getQualidade() &&
+        this.cap_wet==pil.getCapWet());
+    }
+    
     public Piloto clone(){
         return new Piloto(this);
     }

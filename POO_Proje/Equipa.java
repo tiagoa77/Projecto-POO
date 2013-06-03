@@ -34,6 +34,10 @@ public class Equipa implements Serializable
    public Piloto getPil2(){return this.piloto2;}
    public String getNome(){return this.nome;}
    
+   public void setPil1(Piloto pil) {this.piloto1= pil.clone();}
+   public void setPil2(Piloto pil) {this.piloto2=pil.clone();}
+   public void setNome(String nome_eq) {this.nome=nome_eq;}
+   
    public String toString(){
        StringBuilder s = new StringBuilder();
        s.append("Nome de Equipa: " + this.nome + "\n");
@@ -41,5 +45,20 @@ public class Equipa implements Serializable
        s.append(this.piloto1.toString());
        s.append(this.piloto2.toString());
        return s.toString();
-       }
+   }
+   
+
+   public boolean equals(Object o){
+       if(this==o) return true;
+       if(o==null || o.getClass() != this.getClass()) return false;
+       Equipa eq = (Equipa) o;
+       return piloto1.equals(eq.getPil1()) && piloto2.equals(eq.getPil2()) && this.nome.equals(eq.getNome());
+    
+   }
+   
+   
+   
+   public Equipa clone(){
+       return new Equipa(this);
+   }
 }

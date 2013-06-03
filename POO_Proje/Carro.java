@@ -46,12 +46,6 @@ public abstract class Carro implements Serializable
         this.condutores = carro.getCondutores();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
     public String getMarca(){ return this.marca; }
     public String getModelo(){ return this.modelo; }
     public int getCilind(){return this.cilind; }

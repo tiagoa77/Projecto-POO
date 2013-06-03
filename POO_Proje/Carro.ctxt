@@ -16,7 +16,10 @@ comment2.params=carro
 comment2.target=Carro(Carro)
 comment3.params=
 comment3.target=java.lang.String\ getMarca()
+<<<<<<< HEAD
 comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+=======
+>>>>>>> 5a40b076ed2b6ee071150b22d45d61878d7d1f3f
 comment4.params=
 comment4.target=java.lang.String\ getModelo()
 comment5.params=

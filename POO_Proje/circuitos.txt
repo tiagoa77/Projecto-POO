@@ -1,1 +1,7 @@
-dist;numero_voltas;nome;tempo_med;desv_tempo_med;troca_pil;tempo_rec;carro_rec;piloto_rec;
+Lisb;10;100;0.4;PC1;1.45;PC2;1.65;GT;1.35;SC;1.9;0.5;12.01;
+Pork;15;100;0.5;PC1;1.65;PC2;1.7;GT;1.5;SC;1.65;0.5;11.01;
+Londs;13;100;0.03;PC1;1.8;PC2;1.65;GT;1.35;SC;1.9;0.5;10.01;
+Dubei;11;100;0.6;PC1;1.43;PC2;1.65;GT;1.35;SC;1.9;0.5;12.01;
+Algar;12;100;0.2;PC1;1.47;PC2;1.65;GT;1.35;SC;1.9;0.5;12.01;
+Marinha;9;100;0.3;PC1;1.40;PC2;1.65;GT;1.35;SC;1.9;0.5;12.01;
+Gambeia;14;100;0.11;PC1;1.41;PC2;1.65;GT;1.35;SC;1.9;0.5;12.01;

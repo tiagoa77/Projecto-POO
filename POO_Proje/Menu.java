@@ -5,11 +5,15 @@ import static java.lang.System.out;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import java.io.Serializable;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 
 /**
  * Write a description of class Menu here.
@@ -82,7 +86,7 @@ public class Menu implements Serializable
            System.out.println("-- 1 -> Apostar                                                     (1) --");
            System.out.println("-- 2 -> Apostas em vigor                                            (2) --");
            System.out.println("-- 3 -> Historico de apostas                                        (3) --");
-           System.out.println("-- 4 -> Classificaçao de utilizadores                               (4) --");
+           System.out.println("-- 4 -> Classificaço de utilizadores                               (4) --");
            System.out.println("-- 5 -> Classificação da corrida                                    (5) --");
            System.out.println("-- 6 -> Classificação do Campeonato                                 (6) --");
            System.out.println("-- 7 -> Simular corrida                                             (7) --");
@@ -150,11 +154,17 @@ public class Menu implements Serializable
        List<Carro> p = new ArrayList<Carro>();
        for(String ca : linhas){
            aux = ca.split(";");
-           car= new CarroPC2();
-           car.setMarca(aux[0]);
-           car.setModelo(aux[1]);
-           car.getCilind(aux[2]);
-           car.getPot(aux[3]);
+           if(aux[0].equals("PC1")){
+               car= new CarroPC1();
+               car.setMarca(aux[0]);
+               car.setModelo(aux[1]);
+               car.getCilind(aux[2]);
+               car.getPot(aux[3]);
+               }
+           if(aux[0].equals("PC2")){}
+           if(aux[0].equals("GT")){}
+           if(aux[0].equals("SC")){}
+           
            p.add(car);
         }
        return p;
@@ -166,32 +176,33 @@ public class Menu implements Serializable
        String[] aux;
        Circuito cir;
        List <String> linhas = Menu.leLinhasScanner(fichName);
-       List <Float> tempoMedio = new ArrayList<Float>();
+       Map <String,Float> tempoMedio = new HashMap<String,Float>();
        List<Circuito> p = new ArrayList<Circuito>();
        for(String pista : linhas){
            aux = pista.split(";");
            cir = new Circuito();
            cir.setNome(aux[0]);
-           /*cir.setNumVol(aux[1]);
-           cir.setDist(aux[2]);
-           cir.setDesvTempMed(aux[3]);
-           tempoMedio.add(aux[4]);
-           tempoMedio.add(aux[5]);
-           tempoMedio.add(aux[6]);
-           tempoMedio.add(aux[7]);
+           cir.setNumVol(Integer.parseInt(aux[1]));
+           cir.setDist(Integer.parseInt(aux[2]));
+           cir.setDesvTempMed(Float.parseFloat(aux[3]));
+           tempoMedio.put(aux[4],Float.parseFloat(aux[5]));
+           tempoMedio.put(aux[6],Float.parseFloat(aux[7]));
+           tempoMedio.put(aux[8],Float.parseFloat(aux[9]));
+           tempoMedio.put(aux[10],Float.parseFloat(aux[11]));
+           cir.setTempoMed(tempoMedio);
+           cir.setTrocaPil(Float.parseFloat(aux[12]));
+           cir.setTempoRec(Float.parseFloat(aux[13]));
            
-           cir.setTrocaPil(aux[8]);
-           */
            p.add(cir);
         }
        return p;
     }
     
    //ObjectStream
-   public static void gravaObj(List<Piloto> p) {
+   public void gravaObj() {
         try{
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("RancingMan.dat"));
-            out.writeObject(p);
+            out.writeObject(this);
             out.flush(); 
             out.close();
         }
@@ -210,14 +221,15 @@ public class Menu implements Serializable
         }
     }
     
-   public static void main() {  
+   public static List<Circuito> main3() {  
      // List<Carro> p = Menu.carregaCarros("carros.txt");
       List<Circuito> c = Menu.carregaCircuitos("circuitos.txt");
       List<Piloto> p = Menu.carregaPilotos("pilotos.txt");
-      Menu.gravaObj(p);
+      //Menu.gravaObj();
       Menu.Opcoes();
       
-      
+      return c;
        
    }
+   
 }

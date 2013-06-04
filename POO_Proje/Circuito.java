@@ -14,7 +14,7 @@ public class Circuito implements Serializable
     private int dist;
     private int numeroVoltas;
     private String nome;
-    private Map<String, Float> tempo_med;
+    private Map<String, Float> tempoMed;
     private float desv_tempo_med;
     private float troca_pil;
     private float tempo_rec;
@@ -31,7 +31,7 @@ public class Circuito implements Serializable
         this.dist= 0;
         this.numeroVoltas = 0;
         this.nome="";
-        this.tempo_med=new HashMap<String,Float>();
+        this.tempoMed=new HashMap<String,Float>();
         this.desv_tempo_med=0.00f;
         this.troca_pil=0.00f;
         this.tempo_rec=0.00f;
@@ -50,7 +50,7 @@ public class Circuito implements Serializable
         for( float temp: tempmed.values()){
           //  this.tempo_med.put(tipo,tempmed.get(tipo));
         }
-        this.tempo_med=tempmed;
+        this.tempoMed=tempmed;
         this.desv_tempo_med=desvio;
         this.troca_pil=troca;
         this.tempo_rec=temprec;
@@ -86,14 +86,15 @@ public class Circuito implements Serializable
     public String getNome(){ return this.nome; }
     
     /** Devolve Tempo MŽdio             **/
-    public float getTempoMed(String key){
-        /** 
-        Map<String,Float> novo = new Map<String,Float>();
-        for (int i=0; this.tempo_med.size();i++){
-            novo.put(this.tempo_med
+    public Map<String,Float> getTempoMed(){
+       
+        Map<String,Float> novo = new HashMap<String,Float>();
+        for (String n : this.tempoMed.keySet()){
+            Float t = this.tempoMed.get(n);
+            novo.put(n, t);
         }   
-        */
-        return this.tempo_med.get(key);
+        
+        return novo;
     }
     
     /** Devolve Desvio de Tempo MŽdio   **/
@@ -114,9 +115,9 @@ public class Circuito implements Serializable
     public void setDist(int newDist){ dist=newDist; }
     public void setNome(String newNome){ nome=newNome; }
     public void setNumVol(int newNumVol){this.numeroVoltas = newNumVol;}
-    /**
-    public void setTempoMed(List<Float> new_tempo_med){ tempo_med=new_tempo_med; }
-    */
+    
+    public void setTempoMed(Map<String,Float> newTempoMed){ tempoMed=newTempoMed; }
+    
     
     public void setDesvTempMed(float new_desvio){ desv_tempo_med=new_desvio; }
     public void setTrocaPil(float new_troca_pil){ troca_pil=new_troca_pil; }
@@ -130,7 +131,7 @@ public class Circuito implements Serializable
         s.append("Distancia: "+ this.dist + "\n");
         s.append("Numero de Voltas: "+ this.numeroVoltas + "\n");
         s.append("Tempos MŽdios: ");
-        for (int i=0; i<=this.tempo_med.size(); i++){
+        for (int i=0; i<=this.tempoMed.size(); i++){
             s.append("");
         }
         return s.toString();

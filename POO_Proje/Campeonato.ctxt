@@ -1,4 +1,12 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Campeonato()
-numComments=1
+comment1.params=classi\ classiGeral
+comment1.target=Campeonato(java.util.List,\ java.util.Map)
+comment2.params=campe
+comment2.target=Campeonato(Campeonato)
+comment3.params=
+comment3.target=java.util.List\ getClassificacao()
+comment4.params=
+comment4.target=java.util.Map\ getClassificacaoGeral()
+numComments=5

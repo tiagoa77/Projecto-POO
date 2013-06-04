@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class CarroPC2 extends Carro implements Serializable
 {
+    private int cilindrada=1600;
     // instance variables - replace the example below with your own
 
     /**
@@ -31,8 +32,9 @@ public class CarroPC2 extends Carro implements Serializable
     public CarroPC2 clone(){
         return new CarroPC2(this);
     }
-
-
+    
+    public int getCilind(){return this.cilindrada; }
+    
     public float tempoProximaVolta(Circuito pista){
         float desvio=0;
         //float tempoMedio = pista.getTempoMed().get(1);

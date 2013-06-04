@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class CarroGT extends Carro implements Serializable
 {
     // instance variables - replace the example below with your own
-    
+    private int cilindrada;
 
     /**
      * Constructor for objects of class GT
@@ -16,11 +16,12 @@ public class CarroGT extends Carro implements Serializable
     public CarroGT()
     {
         // initialise instance variables
-
+        cilindrada=0;
         super();
     }
     public CarroGT( CarroGT carro)
     {
+        cilindrada=carro.getCilind();
         super(carro);
     }
 
@@ -30,5 +31,7 @@ public class CarroGT extends Carro implements Serializable
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
+    
+    public int getCilind(){return this.cilindrada; }
     public CarroGT clone(){ return new CarroGT(this); }
 }

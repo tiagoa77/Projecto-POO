@@ -10,6 +10,7 @@ public class Corrida implements Serializable
 {
    private Circuito pista;
    private Map<Carro,Float> classificacao;
+   private int volta;
    
    public Corrida(){
     //this.participantes = new ArrayList<Carro>();

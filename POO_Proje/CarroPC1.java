@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class CarroPC1 extends Carro implements Serializable
 {
     // instance variables - replace the example below with your own
-    
+    private int cilindrada;
 
     /**
      * Constructor for objects of class PC1
@@ -16,12 +16,13 @@ public class CarroPC1 extends Carro implements Serializable
     public CarroPC1()
     {
         // initialise instance variables
-
+        this.cilindrada=0;
         super();
     }
     public CarroPC1( CarroPC1 carro)
     {
-    super(carro);
+        this.cilindrada = carr.getCilind();
+        super(carro);
     }
 
     /**
@@ -30,5 +31,7 @@ public class CarroPC1 extends Carro implements Serializable
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
+    
+    public int getCilind(){return this.cilindrada; }
     public CarroPC1 clone(){ return new CarroPC1(this); }
 }

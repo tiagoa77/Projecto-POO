@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Carro()
-comment0.text=\r\n\ Constructores\r\n
+comment0.text=\n\ Constructores\n
 comment1.params=marc\ mod\ cilindrada\ potencia\ piloto1\ piloto2\ nomeEquipa
 comment1.target=Carro(java.lang.String,\ java.lang.String,\ int,\ int,\ Piloto,\ Piloto,\ java.lang.String)
 comment10.params=marc

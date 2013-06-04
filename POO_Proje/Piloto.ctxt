@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Piloto()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Piloto\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Piloto\n
 comment1.params=nome_p\ nacionalidade\ palmares\ qualid\ capacidade_wet
 comment1.target=Piloto(java.lang.String,\ java.lang.String,\ int,\ int,\ int)
 comment10.params=new_palmar
@@ -35,7 +35,7 @@ comment7.target=int\ getCapWet()
 comment7.text=Devolve\ Capacidade\ Wet*
 comment8.params=new_nome
 comment8.target=void\ setNome(java.lang.String)
-comment8.text=\r\n\ SET\r\n
+comment8.text=\n\ SET\n
 comment9.params=new_nac
 comment9.target=void\ setNac(java.lang.String)
 numComments=16

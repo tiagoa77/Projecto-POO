@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.lang.Object;
 /**
  * Write a description of class Carro here.
  * 
@@ -12,7 +13,6 @@ public abstract class Carro implements Serializable
     // instance variables - replace the example below with your own
     private String marca;
     private String modelo;
-    private int cilind;
     private int pot;
     private Piloto piloto1;
     private Piloto piloto2;
@@ -25,7 +25,6 @@ public abstract class Carro implements Serializable
     {
         this.marca="";
         this.modelo="";
-        this.cilind=0;
         this.pot=0;
         this.piloto1 = new Piloto();
         this.piloto2 = new Piloto();
@@ -36,7 +35,6 @@ public abstract class Carro implements Serializable
     {
         this.marca=marc;
         this.modelo=mod;
-        this.cilind=cilindrada;
         this.pot=potencia;
         this.piloto1 = piloto1;
         this.piloto2 = piloto2;
@@ -47,7 +45,6 @@ public abstract class Carro implements Serializable
     {
         this.marca=carro.getMarca();
         this.modelo=carro.getModelo();
-        this.cilind=carro.getCilind();
         this.pot=carro.getPot();
         this.piloto1 = carro.getPiloto1();
         this.piloto2 = carro.getPiloto2();
@@ -57,7 +54,9 @@ public abstract class Carro implements Serializable
 
     public String getMarca(){ return this.marca; }
     public String getModelo(){ return this.modelo; }
-    public int getCilind(){return this.cilind; }
+    
+    public int getCilind(){return this.getClass().getCilind(); }
+    
     public int getPot(){ return this.pot; }
     public Piloto getPiloto1(){ return this.piloto1; }
     public Piloto getPiloto2(){ return this.piloto2; }

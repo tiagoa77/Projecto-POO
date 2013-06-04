@@ -16,6 +16,7 @@ public abstract class Carro implements Serializable
     private int pot;
     private Piloto piloto1;
     private Piloto piloto2;
+    private String equipa;
     
     /**
      * Constructores
@@ -26,16 +27,20 @@ public abstract class Carro implements Serializable
         this.modelo="";
         this.cilind=0;
         this.pot=0;
+        this.piloto1 = new Piloto();
+        this.piloto2 = new Piloto();
+        this.equipa = "";
     }    
     
-    public Carro(String marc, String mod, int cilindrada, int potencia,Piloto piloto1,Piloto piloto2)
+    public Carro(String marc, String mod, int cilindrada, int potencia,Piloto piloto1,Piloto piloto2, String nomeEquipa)
     {
         this.marca=marc;
         this.modelo=mod;
         this.cilind=cilindrada;
         this.pot=potencia;
         this.piloto1 = piloto1;
-        this.piloto2 =piloto2;
+        this.piloto2 = piloto2;
+        this.equipa = nomeEquipa;
     }
     
     public Carro(Carro carro)
@@ -44,13 +49,19 @@ public abstract class Carro implements Serializable
         this.modelo=carro.getModelo();
         this.cilind=carro.getCilind();
         this.pot=carro.getPot();
-      
+        this.piloto1 = carro.getPiloto1();
+        this.piloto2 = carro.getPiloto2();
+        this.equipa = carro.getEquipa(); 
+        
     }
 
     public String getMarca(){ return this.marca; }
     public String getModelo(){ return this.modelo; }
     public int getCilind(){return this.cilind; }
     public int getPot(){ return this.pot; }
+    public Piloto getPiloto1(){ return this.piloto1; }
+    public Piloto getPiloto2(){ return this.piloto2; }
+    public String getEquipa(){ return this.equipa; }
     
    
     
@@ -58,8 +69,9 @@ public abstract class Carro implements Serializable
     public void setModelo (String mod){ this.modelo=mod; }
     public void setCilind (int cilindrada){ this.cilind=cilindrada; }
     public void setPot (int potencia){ this.pot=potencia; }
-   
-    
+    public void setPiloto1 (Piloto piloto1){this.piloto1=piloto1;}
+    public void setPiloto2 (Piloto piloto2){this.piloto2=piloto2;}
+    public void setEquipa (String nomeEquipa){ this.equipa=nomeEquipa; }
     
     public abstract Carro clone();
     

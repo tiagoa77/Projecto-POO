@@ -13,6 +13,7 @@ public abstract class Carro implements Serializable
     // instance variables - replace the example below with your own
     private String marca;
     private String modelo;
+    private String categoria;
     private int pot;
     private Piloto piloto1;
     private Piloto piloto2;
@@ -55,22 +56,27 @@ public abstract class Carro implements Serializable
     public String getMarca(){ return this.marca; }
     public String getModelo(){ return this.modelo; }
     
-    public int getCilind(){return this.getClass().getCilind(); }
+    //public int getCilind(){return this.getClass().getCilind(); }
     
     public int getPot(){ return this.pot; }
     public Piloto getPiloto1(){ return this.piloto1; }
     public Piloto getPiloto2(){ return this.piloto2; }
     public String getEquipa(){ return this.equipa; }
+    public String getCategoria() {return this.categoria;}
     
    
     
     public void setMarca (String marc){ this.marca=marc; }
     public void setModelo (String mod){ this.modelo=mod; }
-    public void setCilind (int cilindrada){ this.cilind=cilindrada; }
+    //public void setCilind (int cilindrada){ this.cilind=cilindrada; }
     public void setPot (int potencia){ this.pot=potencia; }
     public void setPiloto1 (Piloto piloto1){this.piloto1=piloto1;}
     public void setPiloto2 (Piloto piloto2){this.piloto2=piloto2;}
     public void setEquipa (String nomeEquipa){ this.equipa=nomeEquipa; }
+
+    public Float tempoProximaVolta(int dist, float tempMed){
+        return tempMed;
+    }
     
     public abstract Carro clone();
     

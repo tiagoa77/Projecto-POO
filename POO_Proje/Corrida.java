@@ -37,8 +37,21 @@ public class Corrida implements Serializable
     public Circuito getPista(){return this.pista;}
     public Map<Carro,Float> getClassi() {return this.classificacao;}
    
+    public Map<Carro,Float> actualizaClass(){
+        Map<Carro,Float> aux=new HashMap<Carro,Float>();
+        Float i;
+        for (Carro carr: classificacao.keySet()) {
+            i=classificacao.get(carr);
+            i=i+carr.tempoProximaVolta(pista.getDist(),pista.getTempoMed(carr.getCategoria()));
+            aux.put(carr,i);
+        
+        
+        }
     
+    return aux;
+    }
     
+
     
     
     public boolean equals(Object o){

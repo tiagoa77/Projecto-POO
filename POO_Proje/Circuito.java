@@ -97,6 +97,10 @@ public class Circuito implements Serializable
         return novo;
     }
     
+    public Float getTempoMed(String cat){
+        return tempoMed.get(cat);
+    }
+    
     /** Devolve Desvio de Tempo MŽdio   **/
     public float getDesvTempMed(){return this.desv_tempo_med;}
     /** Devolve Troca de Piloto         **/
